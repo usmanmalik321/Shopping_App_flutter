@@ -67,5 +67,32 @@ List<Product> products = [
   ),
 ];
 
+List<Product> dresses = [
+  Product(
+      id: 1,
+      title: "Red dress",
+      price: 234343400,
+      size: 12,
+      description: dummyText,
+      image: "assets/images/red_dress.png",
+      color: Colors.redAccent),
+  Product(
+      id: 2,
+      title: "pink dress",
+      price: 2334400,
+      size: 12,
+      description: dummyText,
+      image: "assets/images/pink_dress.png",
+      color: Colors.pinkAccent),
+  Product(
+      id: 3,
+      title: "Green dress",
+      price: 2333400,
+      size: 12,
+      description: dummyText,
+      image: "assets/images/green_dress.png",
+      color: Colors.green)
+];
+
 String dummyText =
     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.";

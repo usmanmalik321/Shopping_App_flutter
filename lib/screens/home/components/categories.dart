@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shopping_app/constants.dart';
 
 class Categories extends StatefulWidget {
+  final Function(int) update;
+  Categories({Key key, this.update}) : super(key: key);
   @override
   _CategoriesState createState() => _CategoriesState();
 }
@@ -9,8 +11,6 @@ class Categories extends StatefulWidget {
 class _CategoriesState extends State<Categories> {
   List<String> categories = [
     "Hand Bag",
-    "Jewlory",
-    "footWear",
     "Dresses",
   ];
   int selectedIndex = 0;
@@ -30,6 +30,7 @@ class _CategoriesState extends State<Categories> {
         onTap: () {
           setState(() {
             selectedIndex = index;
+            widget.update(index);
           });
         },
         child: Padding(
@@ -47,7 +48,7 @@ class _CategoriesState extends State<Categories> {
                 height: 2,
                 width: 30,
                 color: selectedIndex == index ? Colors.black : Colors.white,
-              )
+              ),
             ],
           ),
         ),
