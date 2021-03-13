@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/constants.dart';
+import 'package:shopping_app/screens/details/detail_screen.dart';
 import 'package:shopping_app/screens/home/components/cards.dart';
 import 'package:shopping_app/screens/home/components/categories.dart';
 
@@ -41,10 +42,26 @@ class _BodyState extends State<Body> {
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             childAspectRatio: 0.75, crossAxisCount: 2),
         itemBuilder: (context, index) => activeIndex == 0
-            ? Cards(products[index].color, products[index].price,
-                products[index].title, products[index].image)
-            : Cards(dresses[index].color, dresses[index].price,
-                dresses[index].title, dresses[index].image),
+            ? Cards(
+                products[index].color,
+                products[index].price,
+                products[index].title,
+                products[index].image,
+                () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            DetailsScreen(product: products[index]))))
+            : Cards(
+                dresses[index].color,
+                dresses[index].price,
+                dresses[index].title,
+                dresses[index].image,
+                () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            DetailsScreen(product: dresses[index])))),
       ))
     ]);
   }

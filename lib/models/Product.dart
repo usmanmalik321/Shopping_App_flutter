@@ -75,7 +75,7 @@ List<Product> dresses = [
       size: 12,
       description: dummyText,
       image: "assets/images/red_dress.png",
-      color: Colors.redAccent),
+      color: Colors.red[200]),
   Product(
       id: 2,
       title: "pink dress",
@@ -83,7 +83,7 @@ List<Product> dresses = [
       size: 12,
       description: dummyText,
       image: "assets/images/pink_dress.png",
-      color: Colors.pinkAccent),
+      color: Colors.pink[400]),
   Product(
       id: 3,
       title: "Green dress",
@@ -91,7 +91,7 @@ List<Product> dresses = [
       size: 12,
       description: dummyText,
       image: "assets/images/green_dress.png",
-      color: Colors.green)
+      color: Colors.greenAccent)
 ];
 
 String dummyText =
