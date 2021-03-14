@@ -43,6 +43,7 @@ class _BodyState extends State<Body> {
             childAspectRatio: 0.75, crossAxisCount: 2),
         itemBuilder: (context, index) => activeIndex == 0
             ? Cards(
+                products[index].id,
                 products[index].color,
                 products[index].price,
                 products[index].title,
@@ -53,6 +54,7 @@ class _BodyState extends State<Body> {
                         builder: (context) =>
                             DetailsScreen(product: products[index]))))
             : Cards(
+                dresses[index].id,
                 dresses[index].color,
                 dresses[index].price,
                 dresses[index].title,

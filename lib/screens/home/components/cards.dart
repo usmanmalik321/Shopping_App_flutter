@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
 class Cards extends StatelessWidget {
+  var id;
   var color;
   var price;
   var title;
   var image;
   Function press;
-  Cards(this.color, this.price, this.title, this.image, this.press);
+  Cards(this.id, this.color, this.price, this.title, this.image, this.press);
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -35,10 +36,13 @@ class Cards extends StatelessWidget {
                       )
                     ]),
                   )),
-              Image.asset(
-                image,
-                width: 100,
-                height: 190,
+              Hero(
+                tag: '$id',
+                child: Image.asset(
+                  image,
+                  width: 100,
+                  height: 190,
+                ),
               ),
               Expanded(
                 child: Text(

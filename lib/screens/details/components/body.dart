@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/constants.dart';
 import 'package:shopping_app/models/Product.dart';
+import 'package:shopping_app/screens/details/components/ProductAmount.dart';
 import 'package:shopping_app/screens/details/components/description.dart';
 import 'package:shopping_app/screens/details/components/options.dart';
 import 'package:shopping_app/screens/details/components/titleandimage.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class Body extends StatelessWidget {
   final Product product;
@@ -21,7 +22,7 @@ class Body extends StatelessWidget {
               children: [
                 Container(
                   padding: EdgeInsets.only(
-                      top: size.height * 0.12, left: 40, right: 50),
+                      top: size.height * 0.12, left: 40, right: 40),
                   margin: EdgeInsets.only(top: size.height * 0.3),
                   height: size.height * 0.7,
                   decoration: BoxDecoration(
@@ -60,7 +61,53 @@ class Body extends StatelessWidget {
                     SizedBox(
                       height: 30,
                     ),
-                    ItemDescription()
+                    ItemDescription(),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: RatingBarIndicator(
+                        rating: 2.75,
+                        itemBuilder: (context, index) => Icon(
+                          Icons.star,
+                          color: Colors.amber,
+                        ),
+                        itemCount: 5,
+                        itemSize: 20.0,
+                        direction: Axis.horizontal,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        // crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          ProductAmount(),
+                          OutlinedButton.icon(
+                              onPressed: () => print("added"),
+                              icon: Icon(
+                                Icons.add,
+                                color: product.color,
+                              ),
+                              label: Text(
+                                "Add to Cart",
+                                style: TextStyle(color: product.color),
+                              )),
+                        ]),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                          style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  product.color)),
+                          onPressed: () => print("pressed"),
+                          child: Text("Checkout")),
+                    )
                   ]),
                 ),
                 Column(

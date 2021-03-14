@@ -50,10 +50,13 @@ class TitleAndImage extends StatelessWidget {
                   width: kDefaultPaddin,
                 ),
                 Expanded(
-                  child: Image.asset(
-                    product.image,
-                    height: 250,
-                    fit: BoxFit.fill,
+                  child: Hero(
+                    tag: product.id.toString(),
+                    child: Image.asset(
+                      product.image,
+                      height: 250,
+                      fit: BoxFit.fill,
+                    ),
                   ),
                 )
               ],
