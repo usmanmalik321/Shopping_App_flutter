@@ -7,19 +7,16 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: fromCssColor("#EBEFF9"),
+        backgroundColor: fromCssColor("#0A599D"),
         title: Text(
           "MY CART",
           style: TextStyle(
-              color: fromCssColor("#0A599D"),
-              fontWeight: FontWeight.bold,
-              fontSize: 18),
+              color: Colors.white, fontWeight: FontWeight.w300, fontSize: 18),
         ),
-        elevation: 0.0,
+
         // backgroundColor: Colors.transparent,
-        centerTitle: true,
+
         leading: IconButton(
             icon: SvgPicture.asset(
               "assets/icons/back.svg",
@@ -27,12 +24,8 @@ class CartScreen extends StatelessWidget {
             ),
             onPressed: () => Navigator.pop(context)),
       ),
-      body: Stack(children: [
-        Container(
-            color: fromCssColor("#EBEFF9"),
-            margin: EdgeInsets.only(top: 80),
-            child: Body())
-      ]),
+      body: Stack(
+          children: [Container(color: fromCssColor("#EBEFF9"), child: Body())]),
     );
   }
 }
