@@ -30,7 +30,7 @@ dependencies:
   flutter_svg: ^0.19.3
   provider: ^4.3.3
   flutter_rating_bar: ^4.0.0
-
+  from_css_color: ^1.2.0
 
 dev_dependencies:
   flutter_test:

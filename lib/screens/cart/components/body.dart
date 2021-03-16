@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/screens/cart/components/cartcard.dart';
+import 'package:shopping_app/screens/cart/components/carttotal.dart';
 
 class Body extends StatelessWidget {
   const Body({
@@ -11,8 +12,9 @@ class Body extends StatelessWidget {
     return Column(
       children: [
         Expanded(
-            flex: 7,
+            flex: 6,
             child: Container(
+        
               child: SingleChildScrollView(
                 padding: EdgeInsets.only(top: 20, left: 20, right: 20),
                 child: Column(
@@ -21,14 +23,17 @@ class Body extends StatelessWidget {
               ),
             )),
         Expanded(
-            flex: 3,
+            flex: 4,
             child: Container(
+              margin: EdgeInsets.symmetric(horizontal: 10),
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(25),
-                      topLeft: Radius.circular(25))),
-            ))
+                      topRight: Radius.circular(40),
+                      topLeft: Radius.circular(40)))
+                     ,
+             child: CartTotal())
+            )
       ],
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:from_css_color/from_css_color.dart';
 import 'package:shopping_app/screens/cart/components/plus.dart';
 
 class CartCard extends StatelessWidget {
@@ -27,7 +28,7 @@ class CartCard extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20),
                       bottomLeft: Radius.circular(20)),
-                  color: Colors.transparent),
+                  color:fromCssColor("#E9EEF7") ),
             ),
             flex: 3,
           ),
@@ -48,7 +49,7 @@ class CartCard extends StatelessWidget {
                           color: Colors.white,
                         ),
                         decoration: BoxDecoration(
-                            color: Colors.blueGrey,
+                            color:fromCssColor("#0A599D"),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(30))),
                       )
