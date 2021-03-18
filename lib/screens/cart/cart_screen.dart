@@ -17,13 +17,14 @@ class CartScreen extends StatelessWidget {
 
         // backgroundColor: Colors.transparent,
 
-        leading: IconButton(
-            icon: SvgPicture.asset(
-              "assets/icons/back.svg",
-              color: Colors.white,
-            ),
-            onPressed: () => Navigator.pop(context)),
-      ),
+        leading:  IconButton(
+              icon: SvgPicture.asset(
+                "assets/icons/back.svg",
+                color: Colors.white,
+              ),
+              onPressed: () => Navigator.pop(context)),
+        ),
+      
       body: Stack(
           children: [Container(color: fromCssColor("#EBEFF9"), child: Body())]),
     );

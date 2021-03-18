@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/models/CartModel.dart';
 import 'package:shopping_app/models/Product.dart';
 import 'package:shopping_app/screens/details/components/ProductAmount.dart';
 import 'package:shopping_app/screens/details/components/description.dart';
 import 'package:shopping_app/screens/details/components/options.dart';
 import 'package:shopping_app/screens/details/components/titleandimage.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-
+import 'package:provider/provider.dart';
 class Body extends StatelessWidget {
   final Product product;
 
   const Body({Key key, this.product}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+     var cart = context.watch<CartModel>();
     Size size = MediaQuery.of(context).size;
     return SingleChildScrollView(
       child: Column(
@@ -86,7 +88,7 @@ class Body extends StatelessWidget {
                         children: [
                           ProductAmount(),
                           OutlinedButton.icon(
-                              onPressed: () => print("added"),
+                              onPressed: () => cart.add(product),
                               icon: Icon(
                                 Icons.add,
                                 color: product.color,
